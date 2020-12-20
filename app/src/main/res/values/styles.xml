@@ -1,0 +1,14 @@
+
+<resources>
+    <!-- About Libs Theme -->
+    <style name="AttributionName" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="AttributionCopyright" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+    <style name="AttributionLicense" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+</resources>

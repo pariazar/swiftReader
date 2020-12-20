@@ -1,0 +1,91 @@
+
+<resources>
+    <string name="app_name" translatable="false">Swift Reader</string>
+    <string name="pick_file">انتخاب فایل</string>
+    <string name="toast_pick_file_error">انتخاب پرونده امکان پذیر نیست. وضعیت پرونده را در فایل منیجر بررسی کنید.</string>
+    <string name="toast_http_code_error">Problem loading page, http error code : </string>
+    <string name="toast_io_exception">We can\'t load this page for some reason.</string>
+    <string name="toast_ssl_error">Secure connection failed.</string>
+    <string name="action_about">درباره</string>
+    <string name="version">نسخه</string>
+    <string name="intro">Replay Intro</string>
+    <string name="author" translatable="false">HamedPa</string>
+    <string name="email">Email</string>
+    <string name="description_open">Of course this app is open source. You always have the privilege to make your own modifications to this app. The source code link is in the about section.</string>
+    <string name="title_open">Freedom</string>
+    <string name="title_intro" translatable="false">Pdf Viewer Plus</string>
+    <string name="description__intro">یک کتابخوان ساده PDF.</string>
+    <string name="myLicense">License</string>
+    <string name="privacy">Privacy Policy</string>
+
+    <string name="license" translatable="false">
+        MIT License\n\nCopyright (&#169;) 2020 HamedPa\n\nPermission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+    </string>
+
+    <string name="notice">
+        Hello Users,\n\nPdf Viewer Plus is now also on F-Droid!
+    </string>
+
+    <string name="appChangelog">Change Log</string>
+    <string name="ok">Ok</string>
+    <string name="title_permission">مجوزهای ذخیره سازی</string>
+    <string name="description__permission">Of course this app needs permission to access the phone\'s storage. Please click on the button and allow the app the to read the phone\'s storage. Without it, the app will not work properly.</string>
+
+    <string name="libs">Open Source Libraries</string>
+    <string name="git" translatable="false">Github</string>
+    <string name="code">Source Code</string>
+
+    <string name="share">Share File</string>
+    <string name="print">Print File</string>
+    <string name="devnotice">Developer Notice</string>
+    <string name="theme_picker">تغییر تم</string>
+    <string name="app_info">اطلاعات اپ</string>
+    <string name="author_info">اطلاعات برنامه نویس</string>
+    <string name="contribution">Contributors</string>
+
+    <string name="label_theme_picker">انتخاب تم</string>
+
+    <string name="pref_theme_title">تم ها</string>
+    <string name="pref_theme_summary">انتخاب تم از قبل نصب شده</string>
+
+    <string name="pref_primary_color_title">رنگ اصلی</string>
+    <string name="pref_primary_color_summary">بیشتر اوقات در برنامه شما نمایش داده می شود.</string>
+
+    <string name="pref_accent_color_title">Accent color</string>
+    <string name="pref_accent_color_summary">Accents select parts of the UI.</string>
+
+    <string name="pref_background_color_title">رنگ پس زمینه</string>
+    <string name="pref_background_color_summary">رنگ اصلی محتوای برنامه.</string>
+    <string name="pref_category_appearance">ظاهر</string>
+
+    <string name="pref_colored_navigation_bar_title">رنگ نوار پیمایش</string>
+    <string name="pref_colored_navigation_bar_summary">رنگ اصلی را روی نوار پیمایش اعمال کنید</string>
+    <string name="password">رمز</string>
+    <string name="unlock">بازگشایی فایل PDF</string>
+    <string name="meta">اطلاعات فایل</string>
+    <string name="quality">رندر با کیفیت بالا</string>
+    <string name="settings">تنظیمات</string>
+    <string name="alias">Anti-Aliasing</string>
+    <string name="scroll">اسکرول افقی</string>
+    <string name="snap" translatable="false">Page Snap</string>
+    <string name="fling">ورق زدن صفحه</string>
+    <string name="qualitysettings">کیفیت</string>
+    <string name="scrollsettings">پیمایش صفحه</string>
+    <string name="title_activity_settings">تنظیمات</string>
+    <string name="reload">لود مجدد PDF</string>
+    <string name="reload_sum">برای ایجاد تغییرات ، باید PDF بارگیری شود.</string>
+    <string name="buttonLog">ادامه</string>
+
+</resources>
