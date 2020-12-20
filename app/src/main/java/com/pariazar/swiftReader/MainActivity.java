@@ -462,15 +462,25 @@ public class MainActivity extends ProgressActivity implements OnPageChangeListen
                         if (uri != null)
                             unlockPDF();
                         break;
+                    /*case R.id.translatePage:
+                            Toast.makeText(MainActivity.this, "Translate it!!!", Toast.LENGTH_SHORT).show();
+                        break;*/
                     case R.id.shareFile:
                         if (uri != null)
                             shareFile();
                         break;
-                    case R.id.printFile:
+                    case R.id.translate:
                         if (uri != null)
-                            print(pdfFileName,
+                            /*print(pdfFileName,
                                     new PdfDocumentAdapter(getApplicationContext()),
-                                    new PrintAttributes.Builder().build());
+                                    new PrintAttributes.Builder().build());*/
+                            Toast.makeText(MainActivity.this, String.valueOf(pdfView.getCurrentPage()), Toast.LENGTH_SHORT).show();
+                            Log.d("mypath753",uri.toString());
+                            Intent intent = new Intent(MainActivity.this, Translate.class);
+                            intent.putExtra("bookAddress",uri.toString());
+                            intent.putExtra("page_no",pdfView.getCurrentPage());
+                            startActivity(intent);
+
                         break;
                     default:
                         break;

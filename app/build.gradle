@@ -87,4 +87,7 @@ dependencies {
 
     //Theme Engine
     implementation 'com.jaredrummler:cyanea:1.0.2'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation 'com.itextpdf:itextpdf:5.5.10'
+
 }

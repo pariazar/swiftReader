@@ -31,8 +31,8 @@
         app:showAsAction="always"  />
 
     <item
-        android:id="@+id/printFile"
-        android:icon="@drawable/print_icon"
+        android:id="@+id/translate"
+        android:icon="@drawable/translate_icon"
         android:title="@string/print"
         android:orderInCategory="6"
         app:showAsAction="always"  />
