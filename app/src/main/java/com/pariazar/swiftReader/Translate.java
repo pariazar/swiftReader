@@ -65,7 +65,6 @@ public class Translate extends AppCompatActivity {
                 address_book = Uri.parse(extras.getString("bookAddress"));
             }
             //address_book = Uri.parse(getIntent().getStringExtra("bookAddress"));
-            Toast.makeText(this, address_book.toString(), Toast.LENGTH_SHORT).show();
             page_number = getIntent().getIntExtra("page_no",1);
             Log.d("u8745523",address_book.toString());
             Log.d("u8745523", String.valueOf(page_number));
@@ -93,84 +92,6 @@ public class Translate extends AppCompatActivity {
 
 
 
-        /*String filePath = file.getPath();
-        Bitmap bitmap = BitmapFactory.decodeFile(filePath);
-        FirebaseVisionTextRecognizer textRecognizer = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
-        pagePhoto.setImageBitmap(bitmap);
-
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
-        Task<FirebaseVisionText> task = textRecognizer.processImage(image);
-
-        try {
-            image = FirebaseVisionImage.fromFilePath(
-                    Translate.this,
-                    Uri.fromFile(file)
-            );
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-       /* task.addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
-            @Override
-            public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                //process success
-                results.setText(firebaseVisionText.getText());
-                Log.d("ocr66",firebaseVisionText.getText());
-
-            }
-
-        }).addOnCanceledListener(new OnCanceledListener() {
-            @Override
-            public void onCanceled() {
-                Log.d("ocr66","cancel");
-
-            }
-        });*/
-       /* FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
-
-        Task<FirebaseVisionText> result = detector.processImage(image)
-                .addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
-                    @Override
-                    public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                        // Task completed successfully
-                        results.setText("Hello!");
-                    }
-                })
-                .addOnFailureListener(
-                        new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Task failed with an exception
-                            }
-                        }
-                );
-        /*ImageTextReader.readTextFromImage(page_bitmap, results);
-
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(page_bitmap);
-        FirebaseVisionTextRecognizer textRecognizer = FirebaseVision.getInstance()
-                .getCloudTextRecognizer();
-
-        Task<FirebaseVisionText> result =
-                textRecognizer.processImage(image)
-                        .addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
-                            @Override
-                            public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                                //process success
-                                results.setText(firebaseVisionText.getText());
-                                Log.d("ocr66",firebaseVisionText.getText());
-
-                            }
-                        })
-                        .addOnFailureListener(
-                                new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        //process failure
-                                        Log.d("ocr66",e.getMessage());
-                                    }
-                                });
-
-        result.getResult();
-        Toast.makeText(this, String.valueOf(result.isComplete()), Toast.LENGTH_SHORT).show();*/
         PdfReader document = null;
         try {
             document = new PdfReader(new FileInputStream(file));
@@ -200,13 +121,6 @@ public class Translate extends AppCompatActivity {
 
         // Replace All space (unicode is \\s) to %20
         str1 = str1.replaceAll("\\s", "%20");
-
-     /*   results.setText(str1);
-        results.setVisibility(View.VISIBLE);
-        file = new File (Environment.getExternalStorageDirectory(),"Ketabeman/Books/1.jpg");
-        results.setMovementMethod(new ScrollingMovementMethod());
-        webviewTrans.setVisibility(View.INVISIBLE);
-*/
 
         webviewTrans.getSettings().setJavaScriptEnabled(true);
         setUpWebViewDefaults(webviewTrans);

@@ -503,11 +503,15 @@ public class MainActivity extends ProgressActivity implements OnPageChangeListen
                             speak(textPdf);
                             item.setTitle("Stop it");
                             isTTSActivated = true;
+                            item.setIcon(R.drawable.stop);
+
 
                         }else {
                             if (tts != null) {
                                 tts.stop();
                                 isTTSActivated = false;
+                                item.setIcon(R.drawable.speaker);
+
                             }
                         }
                         break;
