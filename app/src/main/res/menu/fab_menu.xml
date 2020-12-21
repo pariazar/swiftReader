@@ -24,8 +24,8 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/shareFile"
-        android:icon="@drawable/share_icon"
+        android:id="@+id/readBook"
+        android:icon="@drawable/speaker"
         android:title="@string/share"
         android:orderInCategory="2"
         app:showAsAction="always"  />

@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -30,10 +31,12 @@ import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 
+import android.speech.tts.TextToSpeech;
 import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -62,6 +65,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 @EActivity(R.layout.activity_main)
 public class MainActivity extends ProgressActivity implements OnPageChangeListener, OnLoadCompleteListener,
@@ -78,7 +82,8 @@ public class MainActivity extends ProgressActivity implements OnPageChangeListen
 
     private static String PDF_PASSWORD = "";
     private SharedPreferences prefManager;
-
+    private TextToSpeech tts;
+    private boolean isTTSActivated;
     @ViewById
     PDFView pdfView;
 
@@ -103,6 +108,28 @@ public class MainActivity extends ProgressActivity implements OnPageChangeListen
 
         mgr = (PrintManager) getSystemService(PRINT_SERVICE);
 
+        configTts();
+    }
+
+    private void configTts() {
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = tts.setLanguage(Locale.US);
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "This Language is not supported");
+                    }
+                    //speak("Hello");
+
+                } else {
+                    Log.e("TTS", "Initilization Failed!");
+                }
+            }
+
+        });
+        //tts.setPitch(0.2f);
+        tts.setSpeechRate(0.7f);
     }
 
     private void onFirstInstall() {
@@ -465,9 +492,24 @@ public class MainActivity extends ProgressActivity implements OnPageChangeListen
                     /*case R.id.translatePage:
                             Toast.makeText(MainActivity.this, "Translate it!!!", Toast.LENGTH_SHORT).show();
                         break;*/
-                    case R.id.shareFile:
+                    /*case R.id.shareFile:
                         if (uri != null)
                             shareFile();
+                        break;*/
+                    case R.id.readBook:
+                        if(uri!=null && !isTTSActivated) {
+                            String textPdf = PDF_Tools.getTextOfPage(FileUtils.getPath(MainActivity.this,uri),pdfView.getCurrentPage());
+                            Log.d("readc22",textPdf);
+                            speak(textPdf);
+                            item.setTitle("Stop it");
+                            isTTSActivated = true;
+
+                        }else {
+                            if (tts != null) {
+                                tts.stop();
+                                isTTSActivated = false;
+                            }
+                        }
                         break;
                     case R.id.translate:
                         if (uri != null)
@@ -522,6 +564,21 @@ public class MainActivity extends ProgressActivity implements OnPageChangeListen
         view.clearAnimation();
         view.animate().translationY(0).setDuration(100);
 
+    }
+    private void speak(String text){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+        }else{
+            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        }
+    }
+    @Override
+    public void onDestroy() {
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onDestroy();
     }
 }
 
